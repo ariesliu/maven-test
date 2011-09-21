@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    The checkstyle rules for LANXIN2.0
+	-->
+<!DOCTYPE module PUBLIC
+    "-//Puppy Crawl//DTD Check Configuration 1.3//EN"
+    "http://www.puppycrawl.com/dtds/configuration_1_3.dtd">
+
+<module name="Checker"> 
+	<metadata name="com.atlas-sw.eclipse" value="I like Sydney"/>
+	<property name="severity" value="error"/>
+	<module name="Header">
+		<property name="header" value="// Copyright \(c\) 2000-2009 Ufinity. All Rights Reserved."/>
+		<property name="ignoreLines" value="1"/>
+	</module>
+		<module name="TreeWalker"> 
+		<module name="JavadocType">
+			<property name="scope" value="public"/>
+			<property name="authorFormat" value="\S"/>
+		</module>
+		<module name="JavadocMethod">
+			<property name="scope" value="public"/>
+			<property name="allowMissingThrowsTags" value="false"/>
+			<property name="allowUndeclaredRTE" value="true"/>
+			<property name="allowThrowsTagsForSubclasses" value="true"/>
+			<property name="allowMissingParamTags" value="true"/>
+			<property name="allowMissingReturnTag" value="false"/>
+			<property name="allowMissingPropertyJavadoc" value="true"/> 
+		</module>
+		<!--Check packageName,all must be lower-case-->
+		<module name="PackageName">
+			<property name="format" value="^[a-z]+(\.[a-z][a-z0-9]*)*$"/>
+			<message key="name.invalidPattern" value="''{0}'' Package 的名字应该都是由一个小写单词组成。"/>		
+		</module>
+		<!--Check ClassName and InterfaceName,Begin with uppercase-->
+		<module name="TypeName">
+			<property name="format" value="^[A-Z][a-zA-Z0-9]*$"/>
+			<message key="name.invalidPattern" value="''{0}'' 类的名字必须由大写字母开头而其他字母都小写的单词组成,对于所有标识符，其中包含的所有单词都应紧靠在一起，而且大写中间单词的首字母。"/> 
+		</module>
+		<!--Check Variable name,Begin with lower-case-->
+		<module name="LocalVariableName">
+			<property name="format" value="^[a-z][a-zA-Z0-9]*$"/>
+			<message key="name.invalidPattern" value="''{0}'' 变量的名字必须用一个小写字母开头，后面的单词用大写字母开头。"/>
+		</module>
+		<!--Check Static finall name,All must be uppercase-->
+		<module name="ConstantName">
+			<property name="format" value="^[A-Z_].*$"/>
+			<message key="name.invalidPattern" value="''{0}'' static Final变量的名字应该都大写，并且指出完整含义。"/>
+		</module>
+		<!--Check Static name,All must be uppercase-->
+		<module name="StaticVariableName">
+			<property name="format" value="^[A-Z_].*$"/>
+			<message key="name.invalidPattern" value="''{0}'' static Final变量的名字应该都大写，并且指出完整含义。"/>
+		</module>
+		<property name="cacheFile" value="target/cachefile"/>
+        <property name="tabWidth" value="4"/>
+    </module> 
+</module> 
