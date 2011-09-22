@@ -54,6 +54,10 @@
             <artifactId>cobertura-maven-plugin</artifactId>
             <version>2.5.1</version>
 			<configuration>
+			  <formats>            
+				<format>xml</format>
+				<format>html</format>
+			  </formats>
 			  <instrumentation>				
 				<excludes>
 				  <exclude>target/classes/com/sitinspring/*.class</exclude>
@@ -76,14 +80,8 @@
     <plugins>     
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
-        <artifactId>cobertura-maven-plugin</artifactId>
-		<configuration>
-          <formats>
-            <format>html</format>
-            <format>xml</format>
-          </formats>
-        </configuration>
-        <version>2.5.1</version>
+        <artifactId>cobertura-maven-plugin</artifactId>		
+        <version>2.5.1</version>			
       </plugin>
     </plugins>
   </reporting>
